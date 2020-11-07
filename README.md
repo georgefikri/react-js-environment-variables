@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# How to Start
+- install [env-cmd] (https://www.npmjs.com/package/env-cmd)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Setup
+- Now we need to create other .env files to support development and production environments.
+- So we've .env.development and .env.production files.
+- add variables like to ``` REACT_APP_NAME=development ``` or ``` REACT_APP_NAME=production ```
 
-## Available Scripts
+# important Note
+- You must create custom environment variables beginning with ``` REACT_APP_. ``` Any other variables except ```  NODE_ENV ``` will be ignored.
 
-In the project directory, you can run:
+# package.json configuration
+- let's say we've 2 modes/variables "development" && "production"
+- these will the configs for these 2 modes 
 
-### `npm start`
+``` ```"dev-start":"env-cmd -f .env.development react-scripts start",
+    "dev-build": "env-cmd -f .env.development react-scripts build",
+    "prod-start": "env-cmd -f .env.production react-scripts start",
+    "prod-build": "env-cmd -f .env.production react-scripts build", ``` ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Way 1 using : process.env.REACT_APP_NAME
+- this way i am not relying on json file keys to show and hide things. but "process.env.REACT_APP_NAME" either it's development or production
+- so i use the name of my variable i added as conditionally render anything i want
+``` ``` process.env.REACT_APP_NAME === 'development'?  <h1>development mode</h1> :<h1>not dev</h1> ``` ```
+- here i am checking if the environment variable called development i show some code.
+- found here /src/Way1-environment-var-name
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Way 2 using JSON keys
+1. i create 2 JSON files each one represent the environment i want
+2. add keys in both files that i want to show in any of the environments 
+3. add value to the key either true or false at the file related to the environment, if we want to use this key as true to show something add value true , vice versa.
+4. examples of keys
+``` ``` {
+    "development_Title": true,
+    "production_Title": false
+} ``` ```
+5. both files found here : /src/environment-variables-json
+...development json : /src/environment-variables-json/development.config.json
+...production json : /src/environment-variables-json/production.config.json

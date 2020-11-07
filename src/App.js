@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+import './App.css'
+
+// import development & proudction json
+import development from './environment-variables-json/development.config'
+import production from './environment-variables-json/production.config'
+
+
+import Way1ProcessEnvName from './Way1-environment-var-name'
+
+// importing way 2 : using json keys boolean
+import JsonKeysBoolean from './Way2-json-key-boolean'
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+
+
+      <h1>way 1</h1>
+      <Way1ProcessEnvName development={development} production={production} />
+
+      {/* <h1>way 2</h1>
+      <JsonKeysBoolean /> */}
+
     </div>
   );
 }
