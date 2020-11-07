@@ -6,7 +6,7 @@ import './App.css'
 import development from './environment-variables-json/development.config'
 import production from './environment-variables-json/production.config'
 
-
+// importing way 1 : using process.env.REACT_APP_NAME
 import Way1ProcessEnvName from './Way1-environment-var-name'
 
 // importing way 2 : using json keys boolean
