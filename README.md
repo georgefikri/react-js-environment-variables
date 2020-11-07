@@ -22,7 +22,7 @@
 # Way 1 using : process.env.REACT_APP_NAME
 - this way i am not relying on json file keys to show and hide things. but "process.env.REACT_APP_NAME" either it's development or production
 - so i use the name of my variable i added as conditionally render anything i want
-``` ``` process.env.REACT_APP_NAME === 'development'?  <h1>development mode</h1> :<h1>not dev</h1> ``` ```
+- ``` process.env.REACT_APP_NAME === 'development'?  <h1>development mode</h1> :<h1>not dev</h1> ```
 - here i am checking if the environment variable called development i show some code.
 - found here /src/Way1-environment-var-name
 
