@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App"> 
 
+      {/* hide or show way 1 or mode 2 to check either of them , i am showing mway 1 by default*/}
 
       <h1>way 1</h1>
       <Way1ProcessEnvName development={development} production={production} />
