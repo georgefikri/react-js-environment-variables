@@ -6,7 +6,9 @@
 
 ### Setup
 - Now we need to create other .env files to support development and production environments.
-- So we've .env.development and .env.production files.
+- So we've 
+    - .env.development  : /.env.development
+    - .env.production   : /.env.production
 - add variables like to ``` REACT_APP_NAME=development ``` or ``` REACT_APP_NAME=production ```
 
 ### important Note
