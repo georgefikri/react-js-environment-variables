@@ -41,3 +41,9 @@
 5. both files found here : /src/environment-variables-json
     - development json : /src/environment-variables-json/development.config.json
     - production json : /src/environment-variables-json/production.config.json
+
+### starting points
+- App.js  : /src/App.js
+- way1: /src/Way1-environment-var-name
+- way2: /src/Way2-json-key-boolean
+- environment-variables-json:  /src/environment-variables-json
