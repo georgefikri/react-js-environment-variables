@@ -34,7 +34,7 @@
 2. add keys in both files that i want to show in any of the environments 
 3. add value to the key either true or false at the file related to the environment, if we want to use this key as true to show something add value true , vice versa.
 4. examples of keys
--   {
+    - {
         "development_Title": true,
         "production_Title": false
     }
