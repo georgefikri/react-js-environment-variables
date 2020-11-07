@@ -13,10 +13,10 @@
 - let's say we've 2 modes/variables "development" && "production"
 - these will the configs for these 2 modes 
 
-``` `"`dev-start`":`"env-cmd -f .env.development react-scripts start`"`,
-    `"`dev-build`"`: `"`env-cmd -f .env.development react-scripts build`"`,
-    `"`prod-start`"`: `"`env-cmd -f .env.production react-scripts start`"`,
-    `"`prod-build`"`: `"`env-cmd -f .env.production react-scripts build`"`, ```
+- "dev-start": "env-cmd -f .env.development react-scripts start",
+- "dev-build": "env-cmd -f .env.development react-scripts build",
+- "prod-start": `"`env-cmd -f .env.production react-scripts start",
+- "prod-build": "env-cmd -f .env.production react-scripts build",
 
 
 # Way 1 using : process.env.REACT_APP_NAME
