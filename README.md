@@ -18,7 +18,7 @@
 
 - "dev-start": "env-cmd -f .env.development react-scripts start",
 - "dev-build": "env-cmd -f .env.development react-scripts build",
-- "prod-start": `"`env-cmd -f .env.production react-scripts start",
+- "prod-start": "env-cmd -f .env.production react-scripts start",
 - "prod-build": "env-cmd -f .env.production react-scripts build",
 
 
@@ -34,10 +34,10 @@
 2. add keys in both files that i want to show in any of the environments 
 3. add value to the key either true or false at the file related to the environment, if we want to use this key as true to show something add value true , vice versa.
 4. examples of keys
-``` ``` {
-    "development_Title": true,
-    "production_Title": false
-} ``` ```
+-   {
+        "development_Title": true,
+        "production_Title": false
+    }
 5. both files found here : /src/environment-variables-json
-...development json : /src/environment-variables-json/development.config.json
-...production json : /src/environment-variables-json/production.config.json
+    - development json : /src/environment-variables-json/development.config.json
+    - production json : /src/environment-variables-json/production.config.json
